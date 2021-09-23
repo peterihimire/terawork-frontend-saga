@@ -10,8 +10,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { getRandomMovies } from "../redux/actions/movieActions";
 
 const HomePage = () => {
+  // USED TO DISPATCH ACTIONS TO THE REDUCERS
   const dispatch = useDispatch();
 
+  // GETS MOVIES FROM STATE AND SERVES THE APP
+  const randMovies = useSelector((state) => {
+    return state.allMovies.randomMovies;
+  });
+
+  // GETS MOVIES FROM SERVER AND SAVES INTO REDUX STATE
   const randomMovies = useCallback(() => {
     fetch(`https://www.omdbapi.com/?s=man&apikey=4a3b711b`)
       .then((response) => response.json())
@@ -30,10 +37,6 @@ const HomePage = () => {
     randomMovies();
   }, [randomMovies]);
 
-  const randMovies = useSelector((state) => {
-    return state.allMovies.randomMovies;
-  });
-
   return (
     <div id="page-container" className="App">
       <div id="content-wrapper">
@@ -51,27 +54,27 @@ const HomePage = () => {
               </div>
               {/* DISPLAYS ALL THE MOVIES RESULT IN A GRID */}
               <div className="movie-list-grid">
-                  {randMovies.map((movie) => {
-                    return (
-                      <div className="" key={movie.imdbID}>
-                        <article className="movie-item" key={movie.imdbID}>
-                          <div className="movie-image-div">
-                            <img src={movie.Poster} alt="movie item" />
-                          </div>
-                          <div className="movie-btn-div">
-                            <Link
-                              // to={`${props.match.url}/${movie.imdbID}`}
-                              className="btn"
-                              // onClick={getSingleMovie}
-                            >
-                              View
-                            </Link>
-                          </div>
-                        </article>
-                      </div>
-                    );
-                  })}
-                </div>
+                {randMovies.map((movie) => {
+                  return (
+                    <div className="" key={movie.imdbID}>
+                      <article className="movie-item" key={movie.imdbID}>
+                        <div className="movie-image-div">
+                          <img src={movie.Poster} alt="movie item" />
+                        </div>
+                        <div className="movie-btn-div">
+                          <Link
+                            // to={`${props.match.url}/${movie.imdbID}`}
+                            className="btn"
+                            // onClick={getSingleMovie}
+                          >
+                            View
+                          </Link>
+                        </div>
+                      </article>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
