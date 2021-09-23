@@ -1,0 +1,113 @@
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(94, 93, 93, 0.726);
+  z-index: 3;
+  transition: all 0.1s linear;
+  visibility: hidden;
+}
+.transparent-bcg {
+  transition-delay: 0.2s;
+  visibility: visible;
+}
+.modally {
+  position: fixed;
+  background: var(--main-white);
+  width: 20%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  color: var(--main-black);
+  box-shadow: 0 0 1.2rem 0 rgba(29, 28, 28, 0.849);
+  transition: all 0.5s linear;
+  transform: translateX(100%);
+}
+.mobile-nav-item {
+  padding: 1rem 0;
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0 2rem 6rem;
+  text-transform: uppercase;
+  list-style-type: none;
+}
+.mobile-nav-links a {
+  text-decoration: none;
+  color: var(--main-black);
+  font-weight: bold;
+}
+.show-nav {
+  transition: all 0.5s linear;
+  transform: translateX(0);
+}
+
+.modally-enter {
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
+.modally-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.modally-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.modally-exit-active {
+  transform: translateX(10rem);
+  opacity: 0;
+  transition: all 200ms;
+}
+.arrow-icon-div {
+  padding: 3rem 0 0 0;
+}
+.slide-movie-img {
+  /* width: 200px; */
+  height: 350px;
+  margin: 4rem 0;
+}
+.slide-movie-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.slidepage {
+  padding: 0 2rem;
+}
+.slidepage-btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 4rem 0 0 0; */
+}
+.slidepage-text {
+  margin: 5rem 0;
+}
+.slidepage-text h4 {
+  padding: 0 0 2rem 0;
+  font-size: var(--small-font);
+  letter-spacing: 1.2px;
+}
+.slidepage-btn {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+/* TABLET */
+@media screen and (min-width: 768px) {
+}
+/* LAPTOP */
+@media (min-width: 993px) {
+}

@@ -1,13 +1,144 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-size: 62.5%;
+  --primary-color: #5f2eea;
+  --lite-grey: #d9dbe9;
+  --dark-grey: #a0a3bd;
+  --darker-grey: #5d5e61;
+  --main-white: #fff;
+  --main-black: #14142b;
+  --main-spacing: 0.2rem;
+  --line-height: 1.4;
+
+  --large-font: 5rem;
+  --medium-large: 4rem;
+  --medium-font: 2.5rem;
+  --small-font: 2rem;
+  --xsmall-font: 1.5rem;
+
+  --main-shadow: 1px 4px 4px rgba(0, 0, 0, 0.04);
+
+  --font: "lato", sans-serif;
+  --font-bold: "lato-bold", sans-serif;
+
+  --sec-font: "trueno", sans-serif;
+  --sec-font-bold: "trueno-bold", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--main-white);
+  overflow-x: hidden;
+  color: var(--main-black);
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 1.6rem;
+}
+.btn {
+  padding: 1rem 4rem;
+  background-color: var(--lite-grey);
+  color: var(--main-black);
+  border: none;
+  border-radius: 50px;
+}
+.pad0 {
+  padding: 0 !important;
+}
+.hidden {
+  display: none;
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.text-justify {
+  text-align: justify;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.hidden-xs {
+  display: block;
+}
+.visible-xs {
+  display: none;
+}
+.flex-div {
+  display: flex;
+}
+.mag-0 {
+  margin: 0 !important;
+}
+.mag-bottom-0 {
+  margin-bottom: 0 !important;
+}
+.mag-top-0 {
+  margin-top: 0 !important;
+}
+.fg-1 {
+  flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.center-sm {
+  text-align: center;
+}
+/***** LAPTOP *****/
+@media (min-width: 993px) {
+  .container {
+    width: 80% !important;
+  }
+  .hidden-xl {
+    display: none;
+  }
+
+  .hidden-md {
+    display: none;
+    /* visibility: hidden; */
+  }
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xl {
+    display: block !important;
+  }
+}
+/***** iPAD *****/
+@media (max-width: 992px) {
+  .btn-full-width {
+    width: 100%;
+  }
+  .hidden-md {
+    display: none;
+  }
+  .visible-md {
+    display: block !important;
+  }
+}
+/***** iPHONE *****/
+@media (max-width: 600px) {
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xs {
+    display: block !important;
+  }
+  .hidden-md {
+    display: none;
+  }
+  .btn-full-width {
+    width: 100%;
+  }
 }
