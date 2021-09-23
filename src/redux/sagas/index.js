@@ -1,4 +1,4 @@
-import { all } from "react-dom/effects";
+import { all } from "redux-saga/effects";
 
 import movieSaga from "./movieSaga";
 
