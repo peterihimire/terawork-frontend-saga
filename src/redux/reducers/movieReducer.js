@@ -15,15 +15,15 @@ export const movieReducer = (state = initialState, action) => {
   console.log(action.payload);
 
   switch (action.type) {
-    case ActionTypes.GET_MOVIES_REQUESTED:
-      console.log(state);
-      return { ...state, loading: true };
-    case ActionTypes.GET_MOVIES_SUCCESS:
-      console.log(state);
-      return { ...state, loading: false, movies: action.payload };
-    case ActionTypes.GET_MOVIES_ERROR:
-      console.log(state);
-      return { ...state, loading: false, error: action.payload };
+    // case ActionTypes.GET_MOVIES_REQUESTED:
+    //   console.log(state);
+    //   return { ...state, loading: true };
+    // case ActionTypes.GET_MOVIES_SUCCESS:
+    //   console.log(state);
+    //   return { ...state, loading: false, movies: action.payload };
+    // case ActionTypes.GET_MOVIES_ERROR:
+    //   console.log(state);
+    //   return { ...state, loading: false, error: action.message };
 
     case ActionTypes.SEARCH_VALIU:
       console.log(state);
@@ -40,7 +40,7 @@ export const movieReducer = (state = initialState, action) => {
       return { ...state, loading: false, randomMovies: action.randomMovies };
     case ActionTypes.GET_RANDOM_ERROR:
       console.log(state);
-      return { ...state, loading: false, error: action.message };
+      return { ...state, loading: false, error: action.payload };
 
     default:
       return state;
