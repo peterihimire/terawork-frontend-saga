@@ -34,13 +34,13 @@ export const movieReducer = (state = initialState, action) => {
 
     case ActionTypes.GET_RANDOM_REQUESTED:
       console.log(state);
-      return { ...state, randomMovies: action.payload };
+      return { ...state, loading: true };
     case ActionTypes.GET_RANDOM_SUCCESS:
       console.log(state);
-      return { ...state, loading: false, movies: action.payload };
+      return { ...state, loading: false, randomMovies: action.randomMovies };
     case ActionTypes.GET_RANDOM_ERROR:
       console.log(state);
-      return { ...state, loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.message };
 
     default:
       return state;
