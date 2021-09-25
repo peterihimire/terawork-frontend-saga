@@ -66,6 +66,7 @@ const HomePage = () => {
                             <div className="movie-btn-div">
                               <Link
                                 // to={`${props.match.url}/${movie.imdbID}`}
+                                to='/'
                                 className="btn"
                                 // onClick={getSingleMovie}
                               >

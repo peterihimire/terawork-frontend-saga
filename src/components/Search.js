@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import "./Search.css";
 import searchIcon from "../assets/Search-Black.svg";
 import searchIconWhite from "../assets/Search-White.svg";
 import { useSelector, useDispatch } from "react-redux";
+// import { ActionTypes } from "../constants/action-types";
 import { searchValiu, getMovies } from "../redux/actions/movieActions";
 
 const Search = () => {
@@ -17,29 +18,16 @@ const Search = () => {
     const value = e.target.value;
     // UPDATE STATE WITH VALUE TO BE USED IN THE SEARCH
     dispatch(searchValiu(value));
+    // dispatch({ type: "GET_MOVIE_REQUESTED", payload: { value } });
+    dispatch(getMovies({ value }));
   };
 
-  // SEARCH API
-  const getMovieSearch = useCallback(() => {
-    fetch(`https://www.omdbapi.com/?s=${searchVal}&apikey=4a3b711b`)
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        if (jsonResponse.Response === "True") {
-          dispatch(getMovies(jsonResponse.Search));
-        } else {
-          // setErrorMessage(jsonResponse.Error);
-          // setLoading(false);
-        }
-      });
-  }, [searchVal, dispatch]);
-
-  useEffect(() => {
-    getMovieSearch();
-  }, [getMovieSearch]);
 
   return (
     <div className="search">
-      <form onSubmit={getMovieSearch}>
+      <form
+      // onSubmit={getMovieSearch}
+      >
         <div className="form-group">
           <div className="input-with-icon">
             <div className="search-icon-div">

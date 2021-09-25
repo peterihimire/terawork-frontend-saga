@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React from "react";
 import SideNav from "../components/SideNav";
 import Search from "../components/Search";
 import Title from "../components/Title";
@@ -9,12 +9,12 @@ import { Link, Route } from "react-router-dom";
 import "../components/MovieSideBar.css";
 import ReactDOM from "react-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import { useSelector, useDispatch } from "react-redux";
-import { selectedMovie } from "../redux/actions/movieActions";
+import { useSelector } from "react-redux";
+// import { selectedMovie } from "../redux/actions/movieActions";
 
 const SearchPage = (props) => {
-  const dispatch = useDispatch();
-  console.log(props);
+  // const dispatch = useDispatch();
+  // console.log(props);
 
   //
   let movieId = props.location && props.location.pathname;
@@ -32,23 +32,23 @@ const SearchPage = (props) => {
     return state.allMovies.movie;
   });
 
-  const getSingleMovie = useCallback(() => {
-    fetch(`http://www.omdbapi.com/?i=${movieId.slice(8)}&apikey=4a3b711b`)
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        if (jsonResponse.Response === "True") {
-          console.log("This is the single movie" + jsonResponse);
-          dispatch(selectedMovie(jsonResponse));
-        } else {
-          // setErrorMessage(jsonResponse.Error);
-          // setLoading(false);
-        }
-      });
-  }, [movieId, dispatch]);
+  // const getSingleMovie = useCallback(() => {
+  //   fetch(`http://www.omdbapi.com/?i=${movieId.slice(8)}&apikey=4a3b711b`)
+  //     .then((response) => response.json())
+  //     .then((jsonResponse) => {
+  //       if (jsonResponse.Response === "True") {
+  //         console.log("This is the single movie" + jsonResponse);
+  //         dispatch(selectedMovie(jsonResponse));
+  //       } else {
+  //         // setErrorMessage(jsonResponse.Error);
+  //         // setLoading(false);
+  //       }
+  //     });
+  // }, [movieId, dispatch]);
 
-  useEffect(() => {
-    getSingleMovie();
-  }, [getSingleMovie]);
+  // useEffect(() => {
+  //   getSingleMovie();
+  // }, [getSingleMovie]);
 
   return (
     <>
@@ -141,7 +141,7 @@ const SearchPage = (props) => {
                             <Link
                               to={`${props.match.url}/${movie.imdbID}`}
                               className="btn"
-                              onClick={getSingleMovie}
+                              // onClick={getSingleMovie}
                             >
                               View
                             </Link>
