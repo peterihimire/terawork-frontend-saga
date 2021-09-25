@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SideNav from "../components/SideNav";
 import Search from "../components/Search";
 import Title from "../components/Title";
@@ -9,16 +9,22 @@ import { Link, Route } from "react-router-dom";
 import "../components/MovieSideBar.css";
 import ReactDOM from "react-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import { useSelector } from "react-redux";
-// import { selectedMovie } from "../redux/actions/movieActions";
+import { useSelector, useDispatch } from "react-redux";
+import { selectedMovie } from "../redux/actions/movieActions";
 
 const SearchPage = (props) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // console.log(props);
 
   //
-  let movieId = props.location && props.location.pathname;
-  console.log(movieId.slice(8));
+  let moviePath = props.location && props.location.pathname;
+  console.log(moviePath.slice(8));
+  let movieID = moviePath.slice(8);
+
+  // ADDED THIS TO USE-EFFECT
+  useEffect(() => {
+    dispatch(selectedMovie({ movieID }));
+  }, [dispatch, movieID]);
 
   const movies = useSelector((state) => {
     return state.allMovies.movies;
@@ -97,7 +103,7 @@ const SearchPage = (props) => {
 
                     <div className="slidepage-btn-div">
                       <Link
-                        to={`/movie-details/${movieId.slice(8)}`}
+                        to={`/movie-details/${movieID}`}
                         className="btn search-btn slidepage-btn"
                       >
                         Watch

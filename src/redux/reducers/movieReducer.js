@@ -28,9 +28,16 @@ export const movieReducer = (state = initialState, action) => {
     case ActionTypes.SEARCH_VALIU:
       console.log(state);
       return { ...state, searchValue: action.payload };
-    case ActionTypes.SELECTED_MOVIE:
+
+    case ActionTypes.SELECTED_MOVIE_REQUESTED:
       console.log(state);
-      return { ...state, movie: action.payload };
+      return { ...state, loading: true };
+    case ActionTypes.SELECTED_MOVIE_SUCCESS:
+      console.log(state);
+      return { ...state, loading: false, movie: action.movie };
+    case ActionTypes.SELECTED_MOVIE_ERROR:
+      console.log(state);
+      return { ...state, loading: false, error: action.message };
 
     case ActionTypes.GET_RANDOM_REQUESTED:
       console.log(state);

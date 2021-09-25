@@ -17,29 +17,28 @@ import { call, put, takeEvery } from "redux-saga/effects";
 //   );
 // };
 
-const fetchMovies = async (searchVal) => {
-  const url = `https://www.omdbapi.com/?s=${searchVal}&apiKey=4a3b711b`;
+const fetchMovie = async (selectedID) => {
+  const url = `http://www.omdbapi.com/?i=${selectedID}&apikey=4a3b711b`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data.Search[0]);
-  const searchedMovies = await data.Search;
-  return searchedMovies;
+  console.log(data);
+  return data;
 };
 
 // SAGA GENERATORS
-function* handleFetchMovies(action) {
+function* handleFetchMovie(action) {
   console.log("This should be the action payload..." + action.payload);
   try {
     // GETS THE VALUE FROM THE PAYLOAD TO BE USED IN THE FETCHMOVIES API CALL
-    const movies = yield call(fetchMovies, action.payload.value);
-    yield put({ type: "GET_MOVIES_SUCCESS", movies: movies });
+    const movie = yield call(fetchMovie, action.payload.movieID);
+    yield put({ type: "SELECTED_MOVIE_SUCCESS", movie: movie });
   } catch (error) {
-    yield put({ type: "GET_MOVIES_ERROR", message: error.message });
+    yield put({ type: "SELECTED_MOVIE_ERROR", message: error.message });
   }
 }
 
-function* watcherMovieSaga() {
-  yield takeEvery("GET_MOVIES_REQUESTED", handleFetchMovies);
+function* watcherSelectedMovieSaga() {
+  yield takeEvery("SELECTED_MOVIE_REQUESTED", handleFetchMovie);
 }
 
-export default watcherMovieSaga;
+export default watcherSelectedMovieSaga;

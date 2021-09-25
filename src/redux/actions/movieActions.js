@@ -1,10 +1,5 @@
 import { ActionTypes } from "../constants/action-types";
 
-// export const getMovies = () => {
-//   return {
-//     type: ActionTypes.GET_MOVIES_REQUESTED,
-//   };
-// };
 export const getMovies = (movies) => {
   return {
     type: ActionTypes.GET_MOVIES_REQUESTED,
@@ -14,7 +9,7 @@ export const getMovies = (movies) => {
 
 export const selectedMovie = (movie) => {
   return {
-    type: ActionTypes.SELECTED_MOVIE,
+    type: ActionTypes.SELECTED_MOVIE_REQUESTED,
     payload: movie,
   };
 };

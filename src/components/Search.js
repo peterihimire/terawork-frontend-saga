@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Search.css";
 import searchIcon from "../assets/Search-Black.svg";
 import searchIconWhite from "../assets/Search-White.svg";
@@ -7,10 +7,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { searchValiu, getMovies } from "../redux/actions/movieActions";
 
 const Search = () => {
-  let searchVal = useSelector((state) => {
+  let value = useSelector((state) => {
     return state.allMovies.searchValue;
   });
-  console.log(searchVal);
+  console.log(value);
   const dispatch = useDispatch();
 
   const handleSearchInput = (e) => {
@@ -18,10 +18,15 @@ const Search = () => {
     const value = e.target.value;
     // UPDATE STATE WITH VALUE TO BE USED IN THE SEARCH
     dispatch(searchValiu(value));
+    // ATTACHES VALUE TO THE PAYLOAD TO USE FOR THE SEARCH IN SAGA
     // dispatch({ type: "GET_MOVIE_REQUESTED", payload: { value } });
-    dispatch(getMovies({ value }));
+    // dispatch(getMovies({ value }));
   };
 
+  // console.log(handleSearchInput(e));
+  useEffect(() => {
+    dispatch(getMovies({ value }));
+  }, [dispatch, value]);
 
   return (
     <div className="search">
