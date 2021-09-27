@@ -1,22 +1,5 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
-// GETS MOVIES FROM SERVER AND SAVES INTO REDUX STATE
-// const url = `https://www.omdbapi.com/?s=${searchVal}&apikey=4a3b711b`;
-
-// const fetchMovies = (searchVal) => {
-//   return (
-//     fetch(`https://www.omdbapi.com/?s=${searchVal}&apikey=4a3b711b`, {
-//       method: "GET",
-//     })
-//       .then((response) => response.json())
-//       // .then((jsonResponse) => console.log(jsonResponse.Search))
-//       .then((jsonResponse) => jsonResponse.Search)
-//       .catch((err) => {
-//         throw err;
-//       })
-//   );
-// };
-
 const fetchMovie = async (selectedID) => {
   const url = `http://www.omdbapi.com/?i=${selectedID}&apikey=4a3b711b`;
   const response = await fetch(url);

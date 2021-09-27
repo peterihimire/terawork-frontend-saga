@@ -21,12 +21,6 @@ export const searchValiu = (value) => {
   };
 };
 
-// export const getRandomMovies = () => {
-//   return {
-//     type: ActionTypes.GET_RANDOM_REQUESTED,
-//   };
-// };
-
 export const getRandomMovies = (randomMovies) => {
   return {
     type: ActionTypes.GET_RANDOM_REQUESTED,
