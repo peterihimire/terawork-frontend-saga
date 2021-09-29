@@ -22,21 +22,6 @@ const HomePage = () => {
     dispatch(getRandomMovies());
   }, [dispatch]);
 
-  // // GETS MOVIES FROM SERVER AND SAVES INTO REDUX STATE
-  // const randomMovies = useCallback(() => {
-  //   fetch(`https://www.omdbapi.com/?s=man&apikey=4a3b711b`)
-  //     .then((response) => response.json())
-  //     .then((jsonResponse) => {
-  //       if (jsonResponse.Response === "True") {
-  //         console.log("This is the home random movies" + jsonResponse.Search);
-  //         dispatch(getRandomMovies(jsonResponse.Search));
-  //       } else {
-  //         // setErrorMessage(jsonResponse.Error);
-  //         // setLoading(false);
-  //       }
-  //     });
-  // }, [dispatch]);
-
   return (
     <>
       <div id="page-container" className="App">
@@ -88,24 +73,4 @@ const HomePage = () => {
   );
 };
 export default HomePage;
-// let location = useLocation();
-// let history = useHistory();
-// console.log(location);
-// console.log(history);
-// console.log(movies[4]);
 
-// const [menuState, setMenuState] = useState(false);
-
-// const openHandler = () => {
-//   setMenuState(true);
-// };
-// const closeHandler = () => {
-//   setMenuState(false);
-// };
-
-// const slideInPage = useEffect(() => {
-//   const timer = setTimeout(() => {
-//     console.log("has to work after 5 secs.");
-//   }, 5000);
-//   return () => clearTimeout(timer);
-// }, []);

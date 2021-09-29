@@ -38,23 +38,6 @@ const SearchPage = (props) => {
     return state.allMovies.movie;
   });
 
-  // const getSingleMovie = useCallback(() => {
-  //   fetch(`http://www.omdbapi.com/?i=${movieId.slice(8)}&apikey=4a3b711b`)
-  //     .then((response) => response.json())
-  //     .then((jsonResponse) => {
-  //       if (jsonResponse.Response === "True") {
-  //         console.log("This is the single movie" + jsonResponse);
-  //         dispatch(selectedMovie(jsonResponse));
-  //       } else {
-  //         // setErrorMessage(jsonResponse.Error);
-  //         // setLoading(false);
-  //       }
-  //     });
-  // }, [movieId, dispatch]);
-
-  // useEffect(() => {
-  //   getSingleMovie();
-  // }, [getSingleMovie]);
 
   return (
     <>
@@ -167,24 +150,4 @@ const SearchPage = (props) => {
   );
 };
 export default SearchPage;
-// let location = useLocation();
-// let history = useHistory();
-// console.log(location);
-// console.log(history);
-// console.log(movies[4]);
 
-// const [menuState, setMenuState] = useState(false);
-
-// const openHandler = () => {
-//   setMenuState(true);
-// };
-// const closeHandler = () => {
-//   setMenuState(false);
-// };
-
-// const slideInPage = useEffect(() => {
-//   const timer = setTimeout(() => {
-//     console.log("has to work after 5 secs.");
-//   }, 5000);
-//   return () => clearTimeout(timer);
-// }, []);
