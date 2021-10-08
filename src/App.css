@@ -4,7 +4,6 @@
   min-height: 100vh;
   /* padding: 0 0 0 30rem; */
   margin: 0 0 0 0rem;
-  /* background-color: brown; */
 }
 /****** GIVES EXTRA BOTTOM SPACE FOR FOOTER TO FIT IN  ******/
 #content-wrapper {
@@ -13,7 +12,6 @@
 /****** CONTENT DONT LAP AGAINST CONTAINER WALL ******/
 .main-content {
   padding: 0 2rem;
-  /* background-color: yellow; */
 }
 /****** APP DONT TAKE UP THE CONTAINER FULL WIDTH ******/
 .main-content-container {
@@ -21,7 +19,6 @@
   /* max-width: 117rem; */
   margin: 0 auto;
   padding-top: 8rem;
-  /* background-color: cornflowerblue; */
 }
 /****** FOOTER REMAINS AT THE BOTTOM WITHIN THE GIVEN BOTTOM SPACE ******/
 /* footer {
@@ -36,9 +33,7 @@
   #page-container {
     position: relative;
     min-height: 100vh;
-    /* padding: 0 0 0 30rem; */
     margin: 0 0 0 30rem;
-    /* background-color: brown; */
   }
 }
 /* LAPTOP */
@@ -46,11 +41,8 @@
   #page-container {
     position: relative;
     min-height: 100vh;
-    /* padding: 0 0 0 30rem; */
     margin: 0 0 0 30rem;
-    /* background-color: brown; */
   }
-
 }
 
 /* // padding-top: 0;
