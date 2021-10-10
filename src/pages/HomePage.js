@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import "../components/MovieSideBar.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getRandomMovies } from "../redux/actions/movieActions";
+import Header from "../components/Header";
 
 const HomePage = () => {
   // // USED TO DISPATCH ACTIONS TO THE REDUCERS
@@ -25,6 +26,7 @@ const HomePage = () => {
   return (
     <>
       <div id="page-container" className="App">
+        <Header />
         <div id="content-wrapper">
           <SideNav />
           <div className="main-content">
@@ -44,14 +46,17 @@ const HomePage = () => {
                     {randMovies.map((movie, index) => {
                       return (
                         <div className="" key={movie.imdbID && index}>
-                          <article className="movie-item" key={movie.imdbID && index}>
+                          <article
+                            className="movie-item"
+                            key={movie.imdbID && index}
+                          >
                             <div className="movie-image-div">
                               <img src={movie.Poster} alt="movie item" />
                             </div>
                             <div className="movie-btn-div">
                               <Link
                                 // to={`${props.match.url}/${movie.imdbID}`}
-                                to='/'
+                                to="/"
                                 className="btn"
                                 // onClick={getSingleMovie}
                               >
@@ -73,4 +78,3 @@ const HomePage = () => {
   );
 };
 export default HomePage;
-

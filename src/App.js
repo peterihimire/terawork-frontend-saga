@@ -1,5 +1,5 @@
 import "./App.css";
-// import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
 import MovieDetails from "./pages/MovieDetails";
 import {
@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          {/* <Route path="/" exact component={HomePage} /> */}
+          <Route path="/" exact component={HomePage} />
           <Route path="/movies" component={SearchPage} />
           <Route path="/movie-details/:movieId" component={MovieDetails} />
-          <Redirect from="/" to="/movies" exact />
+          {/* <Redirect from="/" to="/movies" exact /> */}
         </Switch>
       </Router>
     </div>
