@@ -14,6 +14,7 @@ const middleware = [sagaMiddleware];
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 // )(createStore)(rootReducer);
 
+// USED THE COMPOSEWITHDEVTOOLS FROM THE REDUX-DEVTOOLS-EXTENSION
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middleware)),

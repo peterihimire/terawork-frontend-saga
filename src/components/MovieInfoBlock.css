@@ -75,7 +75,7 @@
 .movie-info-block-similar h4 {
   margin: 0 0 3rem 0;
 }
-/* TABLET */
+/***** TABLET *****/
 @media screen and (min-width: 768px) {
   .movie-info-block-main {
     display: flex;
@@ -98,7 +98,7 @@
     margin: 0 4rem 0 0;
   }
 }
-/* LAPTOP */
+/***** LAPTOP *****/
 @media (min-width: 993px) {
   .movie-info-block-main {
     display: flex;
