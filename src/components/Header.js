@@ -29,7 +29,6 @@ const Header = () => {
               image: [
                 {
                   src: "/Logo.svg",
-                  // src: { heartImg },
                   height: 20,
                   width: 23,
                 },
