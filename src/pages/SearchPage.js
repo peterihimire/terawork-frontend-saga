@@ -16,7 +16,6 @@ const SearchPage = (props) => {
   const dispatch = useDispatch();
   // console.log(props);
 
-  //
   let moviePath = props.location && props.location.pathname;
   console.log(moviePath.slice(8));
   let movieID = moviePath.slice(8);
