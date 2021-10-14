@@ -14,7 +14,7 @@ import { selectedMovie } from "../redux/actions/movieActions";
 
 const SearchPage = (props) => {
   const dispatch = useDispatch();
-  // console.log(props);
+
 
   let moviePath = props.location && props.location.pathname;
   console.log(moviePath.slice(8));
