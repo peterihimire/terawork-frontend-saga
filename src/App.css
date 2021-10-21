@@ -28,7 +28,7 @@
   height: 216px; 
   padding: 0 2rem;
 } */
-/* TABLET */
+/***** TABLET *****/
 @media screen and (min-width: 768px) {
   #page-container {
     position: relative;
@@ -36,7 +36,7 @@
     margin: 0 0 0 30rem;
   }
 }
-/* LAPTOP */
+/***** LAPTOP *****/
 @media (min-width: 993px) {
   #page-container {
     position: relative;
