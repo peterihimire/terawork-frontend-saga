@@ -1,7 +1,6 @@
 import React from "react";
 import Particles from "react-particles-js";
 // import heartImg from "../assets/Heart.svg";
-// import searchImg from "../assets/Search-Black.svg";
 // import logo from "../assets/Logo.svg";
 
 const Header = () => {
