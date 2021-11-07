@@ -17,7 +17,7 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/movies" component={SearchPage} />
           <Route path="/movie-details/:movieId" component={MovieDetails} />
-          {/* <Redirect from="/" to="/movies" exact /> */}
+          <Redirect from="/" to="/movies" exact />
         </Switch>
       </Router>
     </div>
