@@ -21,7 +21,7 @@ const fetchMovies = async (searchVal) => {
   const url = `https://www.omdbapi.com/?s=${searchVal}&apiKey=4a3b711b`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data.Search[0]);
+  // console.log(data.Search[0]);
   const searchedMovies = await data.Search;
   return searchedMovies;
 };
