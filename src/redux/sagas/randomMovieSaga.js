@@ -8,7 +8,6 @@ const fetchRandomMovies = () => {
     method: "GET",
   })
     .then((response) => response.json())
-    // .then((jsonResponse) => console.log(jsonResponse.Search))
     .then((jsonResponse) => jsonResponse.Search)
     .catch((err) => {
       throw err;
