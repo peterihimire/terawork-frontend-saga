@@ -33,7 +33,7 @@ footer {
   #page-container {
     position: relative;
     min-height: 100vh;
-    margin: 0 0 0 30rem;
+    margin: 0 0 0 0rem;
   }
 }
 /***** LAPTOP *****/

@@ -13,7 +13,6 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "../components/MovieSideBar.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getRandomMovies } from "../redux/actions/movieActions";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 
 const HomePage = () => {
   // // USED TO DISPATCH ACTIONS TO THE REDUCERS
@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <>
       <div id="page-container" className="App">
-        <Header />
+        {/* <Header /> */}
         <div id="content-wrapper">
           <SideNav />
           <div className="main-content">
